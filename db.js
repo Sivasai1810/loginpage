@@ -1,9 +1,10 @@
+//require('dotenv').config()
 const mongoosedb=require("mongoose")
-const connection= async()=>{
+const connectdb = async()=>{
  try{
-    mongoosedb.connect(process.env. Mongodburl,{
+    mongoosedb.connect("mongodb+srv://nsivasai88:vZQfnujJCtiXAQUV@cluster1.tnnn9qq.mongodb.net/usersdata",{
         useNewUrlParser:true,
-        useUnifiendTopology:true ,
+        useUnifiedTopology:true ,
       
     }) 
       console.log("successfully connected to the mongodb")
@@ -11,6 +12,4 @@ const connection= async()=>{
  console.log("unable to connect the database")
  }
 }
-module.exports=({
-    connection
-})
+module.exports=connectdb
