@@ -13,10 +13,10 @@ bin-release/
 *.ipa
 *.apk
 # Ignore environment variables file
-# .env
+.env
 
 # Ignore Node.js dependencies
-# node_modules/
+node_modules/
 
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
