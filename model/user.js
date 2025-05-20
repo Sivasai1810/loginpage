@@ -24,5 +24,6 @@ const validateinput=(data)=>{
 }
 module.exports={
    user,
-   validateinput
+   validateinput,
+   
 }
