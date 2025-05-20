@@ -40,6 +40,7 @@ const validateinput=(data)=>{
  })
     return Schema.validate(data)
 }
-app.listen(2024,()=>{
+port=process.env.PORT
+app.listen(port,()=>{
     console.log("server has been started")
 })

@@ -36,8 +36,8 @@ catch(error){
 }
 
 })
-//const port=process.env.PORT || 1996
-app.listen(3000,()=>{
+// const  port=process.env.PORT
+app.listen(3300,()=>{
     console.log("server has been started")
 })
 

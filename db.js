@@ -1,4 +1,4 @@
-//require('dotenv').config()
+require('dotenv').config()
 const mongoosedb=require("mongoose")
 const connectdb = async()=>{
  try{
