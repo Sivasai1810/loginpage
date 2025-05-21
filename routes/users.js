@@ -1,13 +1,11 @@
 // this for creating account route
 require('dotenv').config()
-const express=require("express")
+const router = require("express").Router();
 const bcrypt=require("bcrypt")
 const { user, validateinput } = require('../model/user.js');
-const connectdb=require("../db.js")
-const app= express();
-app.use(express.json());
-connectdb();
-app.post("/createaccount", async (req,res)=>{
+//const connectdb=require("../db.js")
+//connectdb();
+router.post("/createaccount", async (req,res)=>{
     try{
       const { userName, email, password } = req.body;  
   const { error }=validateinput(req.body);
@@ -37,7 +35,9 @@ catch(error){
 
 })
 // const  port=process.env.PORT
-app.listen(3300,()=>{
-    console.log("server has been started")
-})
+// app.listen(3300,()=>{
+//     console.log("server has been started")
+//     console.log(process.env.MONGODB_URL)
+// })
+module.exports=router
 

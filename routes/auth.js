@@ -1,14 +1,10 @@
 //this for login page routes if the user already exists then only the user can acess this page 
 require('dotenv').config()
-const express =require("express")
+const router = require("express").Router();
 const joi=require("joi")
 const bcrypt =require("bcrypt")
-const connectdb=require("../db.js")
 const {user} = require("../model/user");
-const app=express();
-app.use(express.json())
-connectdb();
-app.post("/login", async(req,res)=>{
+router.post("/login", async(req,res)=>{
     try{
     const {email,password}=req.body
    const { error }=validateinput(req.body)
@@ -40,7 +36,8 @@ const validateinput=(data)=>{
  })
     return Schema.validate(data)
 }
-port=process.env.PORT
-app.listen(port,()=>{
-    console.log("server has been started")
-})
+// port=process.env.PORT
+// app.listen(port,()=>{
+//     console.log("server has been started")
+// })
+module.exports=router

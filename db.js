@@ -2,7 +2,7 @@ require('dotenv').config()
 const mongoosedb=require("mongoose")
 const connectdb = async()=>{
  try{
-    mongoosedb.connect("mongodb+srv://nsivasai88:vZQfnujJCtiXAQUV@cluster1.tnnn9qq.mongodb.net/usersdata",{
+     await mongoosedb.connect(process.env.MONGODB_URL,{
         useNewUrlParser:true,
         useUnifiedTopology:true ,
       
