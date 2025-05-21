@@ -41,6 +41,5 @@ POST	/api/users/login	Log in an existing user
 You can test the API routes using Postman.
 Make sure the server is running at http://localhost:3000.
  📘 WHAT I LEARNED 
-1)PROJECT FOLDER STRUCTURE AND .ENV 
-2)HOW REAL WORLD BACKEND WORKS HOW API ROUTES AND CHECKING USER DETIALS IN MONGODB AND HOW FRONTEND INTERACT WITH BACKEND HOW BACKEND RESPONSE TO THE FRONTEND
-
+1) Project folder structure 
+2) How real world backend works how api fetch data from routes and also how to interact with mongodb how frontend interact with backend and how backend response to the frontend
