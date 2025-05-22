@@ -11,14 +11,14 @@ router.post("/createaccount", async (req,res)=>{
   const { error }=validateinput(req.body);
   if(error){
     return (
-  res.send("something went wrong with your inputs pls make sure all correct inputs ")
+  res.json({message:"something went wrong with your inputs pls make sure all correct inputs "})
     )    
   }
 
 const existing= await user.findOne({email:email})
 if(existing){
     return(
-    res.status(409).send("user already exist"))
+    res.json({message:"user already exist"}))
 }
 const hasedpassword= await bcrypt.hash(password,10)
 const newuser=new user({
@@ -27,10 +27,10 @@ const newuser=new user({
     password:hasedpassword
 })
  await newuser.save()
-res.status(200).send("user created sucessfully")
+res.json({ message:"user created sucessfully",email})
 }
 catch(error){
-    res.status(500).json({msg:`internal server error ${error}` })
+    res.json({message:`internal server error ${error}` })
 }
 
 })
