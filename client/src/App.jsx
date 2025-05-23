@@ -7,8 +7,9 @@ function App(){
     return(
 <BrowserRouter>
  <Routes>
-  <Route  path='/main' element={<Loginpage />}/>
+  {/* <Route  path='/main' element={<Loginpage />}/> */}
   <Route path='/signup' element={<Signuppage />}/>
+  <Route  path='*' element={<Loginpage />}/>
  </Routes>
 </BrowserRouter>
     )

@@ -34,7 +34,7 @@ function signup() {
         <input className='input' type='text' placeholder='username' name='userName'  value={account.userName} onChange={handlechange}/><br/>
         <input  className='input'type='text' placeholder='email' name='email'value={account.email} onChange={handlechange}/><br/>
          <input  className='input' type='text' placeholder='password' name='password'value={account.password} onChange={handlechange}/>
-         <button  className="button"type='submit'>signup</button><br/>
+         <button  className="button"type='submit'>signup</button><br/><br/>
          <Link   className="link" to="/main"> login</Link><br/>
          {message1!==null && message1!==undefined &&<p>{message1}</p>}
          
