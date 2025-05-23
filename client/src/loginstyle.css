@@ -1,0 +1,42 @@
+.header{
+    text-align: center;
+font-family: sans-serif;
+font-weight: bold;
+padding: 20px;
+margin: 30px;
+border: 2px solid rgba(70, 61, 52, 0.774);
+border-radius: 10px;
+box-shadow: 1px 1px royalblue;
+width: 100vh;
+background-color: yellowgreen;
+}
+.input{
+    padding: 7px;
+    margin: 3px;
+   width: 50vh;
+    text-align: center;
+   cursor: pointer;
+   border-radius: 7px;
+}
+.button{
+     padding: 7px;
+    margin: 3px;
+width: 51.9vh;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+cursor: pointer;
+border-radius: 7px;
+
+
+}
+.link{
+   
+    text-decoration:none ;
+    color: black;
+    background-color:gray;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+
+}

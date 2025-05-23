@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import './loginstyle.css'
 const loginpage=()=>{
     const [logindata,setLogindata]=useState({
  email:"",
@@ -26,12 +26,13 @@ try{
 }
 }    
     return(
-        <form onSubmit={handelget}>
-            <input type="text" placeholder="enter the email" value={logindata.email}  name="email" onChange={handlechange} />
-             <input type="text" placeholder="enter the password" value={logindata.password}  name="password" onChange={handlechange} />
-             <button type="submit"> login</button>
-             <Link to ='/signup'>createaccount</Link>
-             {message2!==null && message2!==undefined && <p>{message2}</p>}
+        <form className="header" onSubmit={handelget}>
+            <h1>WELCOME TO THE XMOTION </h1>
+            <input  className="input" type="text" placeholder="enter the email" value={logindata.email}  name="email" onChange={handlechange} /><br/>
+             <input   className="input" type="text" placeholder="enter the password" value={logindata.password}  name="password" onChange={handlechange} /><br/>
+             <button  className="button"type="submit"> login</button><br/><br/>
+             <Link className="link" to ='/signup'>Create Account</Link>
+             {message2!==null && message2!==undefined && <p className="message">{message2}</p>}
         </form>
     )
 

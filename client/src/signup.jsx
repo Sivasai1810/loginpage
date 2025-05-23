@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import './loginstyle.css'
 
 
 function signup() {
@@ -28,12 +29,13 @@ function signup() {
 
   return (
   
-      <form onSubmit={handlepushdata}>
-        <input type='text' placeholder='username' name='userName'  value={account.userName} onChange={handlechange}/>
-        <input type='text' placeholder='email' name='email'value={account.email} onChange={handlechange}/>
-         <input type='text' placeholder='password' name='password'value={account.password} onChange={handlechange}/>
-         <button type='submit'>signup</button>
-         <Link to="/main"> login</Link>
+      <form  className="header"onSubmit={handlepushdata}>
+        <h1> Create Account</h1>
+        <input className='input' type='text' placeholder='username' name='userName'  value={account.userName} onChange={handlechange}/><br/>
+        <input  className='input'type='text' placeholder='email' name='email'value={account.email} onChange={handlechange}/><br/>
+         <input  className='input' type='text' placeholder='password' name='password'value={account.password} onChange={handlechange}/>
+         <button  className="button"type='submit'>signup</button><br/>
+         <Link   className="link" to="/main"> login</Link><br/>
          {message1!==null && message1!==undefined &&<p>{message1}</p>}
          
       </form>
