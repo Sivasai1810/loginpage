@@ -10,23 +10,23 @@ router.post("/login", async(req,res)=>{
    const { error }=validateinput(req.body)
    if(error){
     return(
-        res.send("somthing went wrong please enter  correct input ")
+        res.json({message:"somthing went wrong please enter  correct input "})
     )
    }
    const existing= await user.findOne({email:email})
    if(!existing){
     return(
-        res.send("invalid Email or password")
+        res.json({ message:"invalid Email or password"})
     )}
     const verifypassword= await bcrypt.compare(password,existing.password)
     if(!verifypassword){
         return(
-            res.send("invalid email or password")
+            res.json({message:"invalid email or password"})
         )
     }
-    res.send("loggined sucessfully"+email)
+    res.json({ message:"loggined sucessfully"+email})
     }catch(error){
-        res.send("internal server error")
+        res.json({message:"internal server error"})
     }
 })
 const validateinput=(data)=>{

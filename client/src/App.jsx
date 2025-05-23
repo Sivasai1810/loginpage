@@ -1,43 +1,17 @@
-import React from 'react'
-import { useState } from 'react'
-import axios from 'axios'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import './index.css'
+import Signuppage from './signup.jsx'
+import Loginpage from './login.jsx'
 
-
-function App() {
-  const [account, setAccount] = useState({
-    userName:"",
-    email:"",
-    password:""
-  })
-  const [message1,setMessage]=useState("")
-  const handlechange=(e)=>{
-    setAccount((a)=>({
-      ...a,
-      [e.target.name]:e.target.value
-    }))
-  }
-  const handlepushdata= async (e)=>{
-    e.preventDefault()
-    const  res=await axios.post("http://localhost:2024/api/users/createaccount",account) 
-  setMessage(res.data.message)
-     console.log(res.data.message)
-   
-
-  }
-
-  return (
-  
-      <form onSubmit={handlepushdata}>
-        <input type='text' placeholder='username' name='userName'  value={account.userName} onChange={handlechange}/>
-        <input type='text' placeholder='email' name='email'value={account.email} onChange={handlechange}/>
-         <input type='text' placeholder='password' name='password'value={account.password} onChange={handlechange}/>
-         <button type='submit'>signup</button>
-         {message1!==null && message1!==undefined &&<p>{message1}</p>}
-      </form>
-        
-     
-
-  )
+function App(){
+    return(
+<BrowserRouter>
+ <Routes>
+  <Route  path='/main' element={<Loginpage />}/>
+  <Route path='/signup' element={<Signuppage />}/>
+ </Routes>
+</BrowserRouter>
+    )
+ 
 }
-
 export default App
